@@ -8,7 +8,12 @@
 <body>
 <jsp:include page="partials/navbar.jsp" />
 
-
+    <h1>Guess a number between 1 and 3</h1>
+    <form method="POST" action="/guess">
+        <label for="guess">Guess: </label>
+        <input type="number" name="guess" id="guess">
+        <input type="submit" value="Guess">
+    </form>
 
 </body>
 </html>
