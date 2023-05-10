@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -44,6 +44,8 @@
       <input type="checkbox" id="onion" name="topping" value="onion">
       <label for="onion">Red Onion</label>
       <br>
+      <label for="address">Address: </label>
+      <input type="text" name="address" id="address">
       <br>
       <input type="submit" value="Submit">
     </form>

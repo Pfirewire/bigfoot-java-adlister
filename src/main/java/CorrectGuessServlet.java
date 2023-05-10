@@ -9,14 +9,16 @@ import java.io.IOException;
 public class CorrectGuessServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        int guess = Integer.parseInt(request.getParameter("guess"));
+        int randomNumber = Integer.parseInt(request.getParameter("random-number"));
+        request.setAttribute("randomNumber", randomNumber);
+        request.setAttribute("isCorrect", true);
+        request.setAttribute("guess", guess);
+        request.getRequestDispatcher("/outcome.jsp").forward(request, response);
 
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        int guess = Integer.parseInt(request.getParameter("guess"));
-        request.setAttribute("isCorrect", true);
-        request.setAttribute("guess", guess);
-        request.getRequestDispatcher("/outcome.jsp").forward(request, response);
     }
 
 }

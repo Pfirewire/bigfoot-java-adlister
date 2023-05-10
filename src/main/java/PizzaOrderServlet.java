@@ -18,12 +18,14 @@ public class PizzaOrderServlet extends HttpServlet {
         String sauce = request.getParameter("sauce-type");
         String size = request.getParameter("size");
         String[] toppings = request.getParameterValues("topping");
+        String address = request.getParameter("address");
         System.out.println("Crust type: " + crust);
         System.out.println("Sauce type: " + sauce);
         System.out.println("Pizza size: " + size);
         System.out.println("Toppings:");
         for(String topping : toppings) {
-            System.out.println(topping);
+            System.out.println("    -" +topping);
         }
+        System.out.println("Address: " + address);
     }
 }

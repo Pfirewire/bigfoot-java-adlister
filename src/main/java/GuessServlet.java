@@ -22,15 +22,16 @@ public class GuessServlet extends HttpServlet {
         int guess = Integer.parseInt(request.getParameter("guess"));
 
         // Set up destination string based on whether user guessed correctly
-        String destination;
-        if(guess < 1 || guess > 3) destination = "/guess.jsp";
-        else if(guess == randomNumber) destination = "/correct";
-        else destination = "/incorrect";
+        if(guess < 1 || guess > 3) response.sendRedirect("/guess.jsp");
+        else if(guess == randomNumber) response.sendRedirect("/correct?random-number=" + randomNumber + "&guess=" + guess);
+        else response.sendRedirect("/incorrect?random-number=" + randomNumber + "&guess=" + guess);
 
-        // Setting attribute so the user can see what number was produced
-        request.setAttribute("randomNumber", randomNumber);
+//        // Setting attribute so the user can see what number was produced
+//        request.setAttribute("randomNumber", randomNumber);
+//
+//        // Forward user to correct servlet
+//        request.getRequestDispatcher(destination).forward(request, response);
 
-        // Forward user to correct servlet
-        request.getRequestDispatcher(destination).forward(request, response);
+//        response.sendRedirect(destination + "?random-number=" + randomNumber + "&guess=" + guess);
     }
 }
