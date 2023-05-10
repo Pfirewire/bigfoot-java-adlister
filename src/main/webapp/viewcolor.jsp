@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -6,7 +7,10 @@
   </jsp:include>
   <style>
     body {
-      background-color: ${color};
+      <%--background-color: white;--%>
+      <%--<c:if test="${color != null}">--%>
+        background-color: ${color};
+<%--      </c:if>--%>
     }
   </style>
 </head>
