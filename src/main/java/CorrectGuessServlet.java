@@ -14,8 +14,9 @@ public class CorrectGuessServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int guess = Integer.parseInt(request.getParameter("guess"));
+        request.setAttribute("isCorrect", true);
         request.setAttribute("guess", guess);
-        request.getRequestDispatcher("/correct.jsp").forward(request, response);
+        request.getRequestDispatcher("/outcome.jsp").forward(request, response);
     }
 
 }
