@@ -33,16 +33,16 @@
         </select>
       <br>
       <h4>Toppings:</h4>
-      <input type="checkbox" id="topping1" name="topping1" value="sausage">
-      <label for="topping1">Sausage</label><br>
-      <input type="checkbox" id="topping2" name="topping2" value="pepperoni">
-      <label for="topping2">Pepperoni</label><br>
-      <input type="checkbox" id="topping3" name="topping3" value="bacon">
-      <label for="topping3">Bacon</label><br>
-      <input type="checkbox" id="topping4" name="topping4" value="pepper">
-      <label for="topping4">Green Pepper</label><br>
-      <input type="checkbox" id="topping5" name="topping5" value="onion">
-      <label for="topping5">Red Onion</label>
+      <input type="checkbox" id="sausage" name="topping" value="sausage">
+      <label for="sausage">Sausage</label><br>
+      <input type="checkbox" id="pepperoni" name="topping" value="pepperoni">
+      <label for="pepperoni">Pepperoni</label><br>
+      <input type="checkbox" id="bacon" name="topping" value="bacon">
+      <label for="bacon">Bacon</label><br>
+      <input type="checkbox" id="pepper" name="topping" value="pepper">
+      <label for="pepper">Green Pepper</label><br>
+      <input type="checkbox" id="onion" name="topping" value="onion">
+      <label for="onion">Red Onion</label>
       <br>
       <br>
       <input type="submit" value="Submit">

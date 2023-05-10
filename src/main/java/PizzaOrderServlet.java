@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "PizzaOrderServlet", urlPatterns = "/pizza-order")
 public class PizzaOrderServlet extends HttpServlet {
@@ -16,13 +17,13 @@ public class PizzaOrderServlet extends HttpServlet {
         String crust = request.getParameter("crust-type");
         String sauce = request.getParameter("sauce-type");
         String size = request.getParameter("size");
+        String[] toppings = request.getParameterValues("topping");
         System.out.println("Crust type: " + crust);
         System.out.println("Sauce type: " + sauce);
         System.out.println("Pizza size: " + size);
         System.out.println("Toppings:");
-        for(int i = 1; i <= 5; i++) {
-            String topping = request.getParameter("topping" + i);
-            if(topping != null) System.out.println(topping);
+        for(String topping : toppings) {
+            System.out.println(topping);
         }
     }
 }
