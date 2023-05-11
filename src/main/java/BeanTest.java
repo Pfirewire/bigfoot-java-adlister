@@ -1,9 +1,13 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BeanTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
 
         // Instantiating albums
         Album album1 = new Album();
@@ -46,6 +50,9 @@ public class BeanTest {
         album5.setSales(12.0);
         album5.setGenre("Rock, Pop, Psychedelic");
 
+        ArrayList<Album> albums = new ArrayList<>(Arrays.asList(album1, album2, album3, album4, album5));
+        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(albums));
+
         // Instantiating Authors
 
         Author author1 = new Author();
@@ -72,6 +79,9 @@ public class BeanTest {
         author5.setId(5);
         author5.setFirstName("Ernest");
         author5.setLastName("Hemingway");
+
+        ArrayList<Author> authors = new ArrayList<>(Arrays.asList(author1, author2, author3, author4, author5));
+        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(authors));
 
         // Instantiating Quotes
         Quote quote1 = new Quote();
@@ -125,6 +135,7 @@ public class BeanTest {
         quote10.setAuthor(author5);
 
         ArrayList<Quote> quotes = new ArrayList<>(Arrays.asList(quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9, quote10));
+        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(quotes));
         for(Quote quote : quotes) {
             System.out.printf("%nAuthor: %s %s%nQuote: %s%n%n", quote.getAuthor().getFirstName(), quote.getAuthor().getLastName(), quote.getContent());
         }
